@@ -1,0 +1,54 @@
+﻿@model List<web_SellPhone.Models.CartItem>
+@{
+    ViewData["Title"] = "Giỏ hàng";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Giỏ hàng của bạn</h2>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info text-center">
+            Giỏ hàng trống. <a asp-controller="Home" asp-action="Index">Mua ngay!</a>
+        </div>
+    }
+    else
+    {
+        <table class="table table-bordered text-center align-middle">
+            <thead class="table-secondary">
+                <tr>
+                    <th>Hình</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><img src="~/images/@item.HinhAnh" style="width:80px; height:80px; object-fit:cover" /></td>
+                        <td>@item.TenSP</td>
+                        <td>@item.DonGia.ToString("N0") đ</td>
+                        <td>@item.SoLuong</td>
+                        <td>@item.ThanhTien.ToString("N0") đ</td>
+                        <td>
+                            <a asp-action="Remove" asp-route-id="@item.MaSP" class="btn btn-danger btn-sm">Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="text-end">
+            <h4 class="text-danger">Tổng cộng: @ViewBag.Total.ToString("N0") đ</h4>
+        </div>
+
+        <div class="text-center mt-3">
+            <a asp-action="Clear" class="btn btn-outline-danger me-2">Xóa tất cả</a>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">Tiếp tục mua hàng</a>
+        </div>
+    }
+</div>
