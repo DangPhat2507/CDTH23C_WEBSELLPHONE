@@ -1,0 +1,24 @@
+﻿@using web_SellPhone.Models
+@model Product
+
+@{
+    ViewData["Title"] = "Xóa sản phẩm";
+}
+
+<h2>Xóa sản phẩm</h2>
+
+<div class="alert alert-warning">
+    <strong>Bạn có chắc muốn xóa sản phẩm này không?</strong>
+</div>
+
+<div class="mb-3">
+    <h4>@Model.TenSP</h4>
+    <p><strong>Giá:</strong> @Model.DonGia.ToString("N0") đ</p>
+    <p><strong>Mô tả:</strong> @Model.MoTa</p>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="MaSP" />
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>

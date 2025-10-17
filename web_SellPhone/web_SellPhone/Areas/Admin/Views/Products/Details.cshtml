@@ -1,0 +1,18 @@
+﻿@using web_SellPhone.Models
+@model Product
+
+@{
+    ViewData["Title"] = "Chi tiết sản phẩm";
+}
+
+<h2>Chi tiết sản phẩm</h2>
+
+<div class="card p-3" style="width: 500px;">
+    <h4>@Model.TenSP</h4>
+    <p><strong>Giá:</strong> @Model.DonGia.ToString("N0") đ</p>
+    <p><strong>Mô tả:</strong> @Model.MoTa</p>
+    <p><strong>Danh mục:</strong> @Model.Category?.CategoryName</p>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.MaSP" class="btn btn-warning mt-3">Sửa</a>
+<a asp-action="Index" class="btn btn-secondary mt-3">Quay lại</a>

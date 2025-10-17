@@ -43,7 +43,13 @@
         </table>
 
         <div class="text-end">
-            <h4 class="text-danger">Tổng cộng: @ViewBag.Total.ToString("N0") đ</h4>
+            <h4 class="text-danger">Tổng cộng: @ViewBag.Total.đ</h4>
+        </div>
+
+        <div class="text-center mt-3">
+            <a asp-controller="Order" asp-action="Checkout" class="btn btn-primary me-2">Thanh toán</a>
+            <a asp-action="Clear" class="btn btn-outline-danger me-2">Xóa tất cả</a>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">Tiếp tục mua hàng</a>
         </div>
 
         <div class="text-center mt-3">

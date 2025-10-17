@@ -1,0 +1,36 @@
+﻿@using web_SellPhone.Models
+@using Microsoft.AspNetCore.Mvc.Rendering
+@model Product
+
+@{
+    ViewData["Title"] = "Thêm sản phẩm";
+}
+
+<h2>Thêm sản phẩm</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group mb-2">
+        <label>Tên sản phẩm</label>
+        <input asp-for="TenSP" class="form-control" />
+    </div>
+
+    <div class="form-group mb-2">
+        <label>Giá</label>
+        <input asp-for="DonGia" class="form-control" />
+    </div>
+
+    <div class="form-group mb-2">
+        <label>Mô tả</label>
+        <textarea asp-for="MoTa" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group mb-2">
+        <label>Danh mục</label>
+        <select asp-for="CategoryID" class="form-control"
+                asp-items="@(new SelectList(ViewBag.Categories, "CategoryID", "CategoryName"))">
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Lưu</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>

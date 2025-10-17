@@ -14,5 +14,7 @@ namespace web_SellPhone.Models
         public int CategoryID { get; set; }
         public Category Category { get; set; }
         public ICollection<Review> Reviews { get; set; }
+        public ICollection<OrderDetail>? OrderDetails { get; set; }
+
     }
 }

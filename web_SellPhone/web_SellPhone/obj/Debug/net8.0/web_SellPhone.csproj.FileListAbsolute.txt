@@ -267,3 +267,4 @@ D:\WEB_SellPhone\web_SellPhone\web_SellPhone\obj\Debug\net8.0\web_SellPhone.pdb
 D:\WEB_SellPhone\web_SellPhone\web_SellPhone\obj\Debug\net8.0\web_SellPhone.genruntimeconfig.cache
 D:\WEB_SellPhone\web_SellPhone\web_SellPhone\obj\Debug\net8.0\ref\web_SellPhone.dll
 D:\WEB_SellPhone\web_SellPhone\web_SellPhone\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\WEB_SellPhone\web_SellPhone\web_SellPhone\obj\Debug\net8.0\web_SellPhone.sourcelink.json

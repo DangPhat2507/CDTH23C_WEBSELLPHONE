@@ -1,0 +1,38 @@
+﻿@using web_SellPhone.Models
+@model IEnumerable<Order>
+@{
+    ViewData["Title"] = "Đơn hàng của tôi";
+}
+
+<div class="container mt-4">
+    <h2>Đơn hàng của tôi</h2>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info mt-3">Bạn chưa có đơn hàng nào.</div>
+    }
+    else
+    {
+        <table class="table table-striped text-center align-middle mt-3">
+            <thead class="table-secondary">
+                <tr>
+                    <th>#</th>
+                    <th>Ngày đặt</th>
+                    <th>Trạng thái</th>
+                    <th>Tổng tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var o in Model)
+                {
+                    <tr>
+                        <td>@o.OrderID</td>
+                        <td>@o.NgayDat.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>@o.TrangThai</td>
+                        <td class="text-danger">@o.TongTien đ</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
